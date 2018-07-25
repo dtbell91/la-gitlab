@@ -4,4 +4,5 @@
     - gitlab
   vars_files:
     - ./group_vars/vault
+    - ./group_vars/generic
     - ./group_vars/gitlab
