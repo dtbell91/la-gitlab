@@ -1,0 +1,22 @@
+---
+# The official GitLab install instructions for Debian want you to `curl ... | sudo bash` which is _terrible_
+# We're going to install the required dependencies, add the apt key, the apt repo, then install GitLab
+- name: Install gitlab dependencies
+  apt: name={{item}} state=installed update_cache=yes cache_valid_time={{cache_valid_time}}
+  with_items:
+  - curl
+  - openssh-server
+  - ca-certificates
+  - debian-archive-keyring
+  - apt-transport-https
+- name: Add GitLab apt key
+  apt_key: url=https://packages.gitlab.com/gitlab/gitlab-ee/gpgkey state=present id=14219A96E15E78F4
+- name: Add GitLab repo
+  apt_repository: repo="deb https://packages.gitlab.com/gitlab/gitlab-ee/debian/ stretch main" state=present
+- name: Install GitLab package
+  apt: name="gitlab-ee" state=installed update_cache=yes
+- name: add gitlab configuration
+  template: src=gitlab.rb.j2 dest=/etc/gitlab/gitlab.rb
+  notify: reconfigure gitlab
+
+# https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template
