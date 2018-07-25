@@ -1,3 +1,4 @@
+# gitlab variables
 gitlab_domain: git.linux.org.au
 gitlab_external_url: "https://{{ gitlab_domain }}"
 gitlab_ssh_host: "{{ gitlab_domain }}"
@@ -7,3 +8,29 @@ gitlab_db_password: "{{ vault_gitlab_db_password }}"
 gitlab_db_database: "{{ vault_gitlab_db_database }}"
 gitlab_db_host: "{{ vault_gitlab_db_host }}"
 gitlab_db_port: 5432
+
+# fail2ban variables
+fail2ban_loglevel: 3
+fail2ban_logtarget: /var/log/fail2ban.log
+fail2ban_socket: /var/run/fail2ban/fail2ban.sock
+fail2ban_ignoreip: 127.0.0.1/8
+fail2ban_bantime: 1800
+fail2ban_maxretry: 5
+fail2ban_backend: auto
+fail2ban_destemail: "{{ vault_fail2ban_destemail }}"
+fail2ban_banaction: iptables-multiport
+fail2ban_mta: sendmail
+fail2ban_protocol: tcp
+fail2ban_chain: INPUT
+fail2ban_action: action_
+fail2ban_services:
+  - name: ssh
+    enabled: "true"
+    port: ssh
+    protocol: tcp
+    filter: sshd
+    logpath: /var/log/auth.log
+    maxretry: 3
+    action: action_
+    banaction: iptables-multiport
+    findtime: 6000

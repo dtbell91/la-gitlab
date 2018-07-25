@@ -1,6 +1,7 @@
 ---
 - hosts: gitlab
   roles:
+    - fail2ban
     - gitlab
   vars_files:
     - ./group_vars/vault
