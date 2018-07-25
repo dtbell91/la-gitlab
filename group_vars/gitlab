@@ -1,6 +1,8 @@
 # gitlab variables
 gitlab_domain: git.linux.org.au
 gitlab_external_url: "https://{{ gitlab_domain }}"
+gitlab_internal_address: "{{ vault_gitlab_internal_address }}"
+gitlab_nginx_proxy_address: "{{ vault_gitlab_nginx_proxy_address }}"
 gitlab_ssh_host: "{{ gitlab_domain }}"
 gitlab_default_root_password: "{{ vault_gitlab_default_root_password }}"
 gitlab_db_username: "{{ vault_gitlab_db_username }}"
