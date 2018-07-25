@@ -46,7 +46,7 @@ external_url 'https://{{ gitlab_domain }}'
 ##! Docs: https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/gitlab.yml.md
 ################################################################################
 gitlab_rails['gitlab_ssh_host'] = '{{ gitlab_ssh_host }}'
-# gitlab_rails['time_zone'] = 'UTC'
+gitlab_rails['time_zone'] = 'Australia/Sydney'
 
 ### Email Settings
 # gitlab_rails['gitlab_email_enabled'] = true
