@@ -1,1 +1,9 @@
 gitlab_domain: git.linux.org.au
+gitlab_external_url: "https://{{ gitlab_domain }}"
+gitlab_ssh_host: "{{ gitlab_domain }}"
+gitlab_default_root_password: "{{ vault_gitlab_default_root_password }}"
+gitlab_db_username: "{{ vault_gitlab_db_username }}"
+gitlab_db_password: "{{ vault_gitlab_db_password }}"
+gitlab_db_database: "{{ vault_gitlab_db_database }}"
+gitlab_db_host: "{{ vault_gitlab_db_host }}"
+gitlab_db_port: 5432

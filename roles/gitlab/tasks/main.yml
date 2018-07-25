@@ -16,7 +16,7 @@
 - name: Install GitLab package
   apt: name="gitlab-ee" state=installed update_cache=yes
 - name: add gitlab configuration
-  template: src=gitlab.rb.j2 dest=/etc/gitlab/gitlab.rb
+  template: src=gitlab.rb.j2 dest=/etc/gitlab/gitlab.rb mode=0600
   notify: reconfigure gitlab
 
 # https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template
