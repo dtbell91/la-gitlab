@@ -139,9 +139,9 @@ gitlab_rails['incoming_email_email'] = "{{ gitlab_incoming_email_address }}"
 
 #### IMAP Settings
 gitlab_rails['incoming_email_host'] = "{{ gitlab_incoming_email_host }}"
-gitlab_rails['incoming_email_port'] = 993
-gitlab_rails['incoming_email_ssl'] = true
-gitlab_rails['incoming_email_start_tls'] = false
+gitlab_rails['incoming_email_port'] = 143
+gitlab_rails['incoming_email_ssl'] = false
+gitlab_rails['incoming_email_start_tls'] = true
 
 #### Incoming Mailbox Settings
 ####! The mailbox where incoming mail will end up. Usually "inbox".
