@@ -17,6 +17,10 @@ gitlab_smtp_address: "{{ vault_gitlab_smtp_address }}"
 gitlab_smtp_user_name: "{{ vault_gitlab_email_address }}"
 gitlab_smtp_password: "{{ vault_gitlab_smtp_password }}"
 gitlab_smtp_domain: "{{ vault_gitlab_smtp_domain }}"
+gitlab_incoming_email_address: "{{ vault_gitlab_email_address }}"
+gitlab_incoming_email_password: "{{ vault_gitlab_smtp_password }}"
+gitlab_incoming_email_host: "{{ vault_gitlab_smtp_address }}"
+
 
 # fail2ban variables
 fail2ban_loglevel: 3
