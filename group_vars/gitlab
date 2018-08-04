@@ -10,6 +10,13 @@ gitlab_db_password: "{{ vault_gitlab_db_password }}"
 gitlab_db_database: "{{ vault_gitlab_db_database }}"
 gitlab_db_host: "{{ vault_gitlab_db_host }}"
 gitlab_db_port: 5432
+gitlab_email_from: "{{ vault_gitlab_email_address }}"
+gitlab_email_reply_to: "{{ vault_gitlab_email_reply_to }}"
+gitlab_email_display_name: "Linux Australia Gitlab"
+gitlab_smtp_address: "{{ vault_gitlab_smtp_address }}"
+gitlab_smtp_user_name: "{{ vault_gitlab_email_address }}"
+gitlab_smtp_password: "{{ vault_gitlab_smtp_password }}"
+gitlab_smtp_domain: "{{ vault_gitlab_smtp_domain }}"
 
 # fail2ban variables
 fail2ban_loglevel: 3
