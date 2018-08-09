@@ -1,2 +1,2 @@
 [gitlab]
-git.linux.org.au ansible_host=localhost
+git.linux.org.au ansible_connection=local
