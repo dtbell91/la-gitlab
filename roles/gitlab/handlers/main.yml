@@ -1,3 +1,5 @@
 ---
 - name: reconfigure gitlab
   command: gitlab-ctl reconfigure
+- name: restart cron
+  service: name=cron state=restarted
