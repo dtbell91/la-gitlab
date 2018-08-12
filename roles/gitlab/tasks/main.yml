@@ -25,6 +25,8 @@
     hour: "*/6"
     minute: 1
   notify: restart cron
+- name: Add secrets backup directory
+  file: path="{{ gitlab_backup_secrets_path }}" state=directory mode=0700 owner=root group=root
 - name: configure secrets backups
   cron:
     name: "gitlab secrets backup"
