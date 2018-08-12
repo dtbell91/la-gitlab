@@ -23,7 +23,7 @@ gitlab_incoming_email_host: "{{ vault_gitlab_smtp_address }}"
 gitlab_backup_root_path: "/srv/backups"
 gitlab_backup_data_path: "{{ gitlab_backup_root_path }}/gitlab-data"
 gitlab_backup_secrets_path: "{{ gitlab_backup_root_path }}/gitlab-secrets"
-gitlab_backup_secrets_pubkey: " "
+gitlab_backup_secrets_keyid: "{{ vault_gitlab_backup_secrets_keyid }}"
 
 
 # fail2ban variables

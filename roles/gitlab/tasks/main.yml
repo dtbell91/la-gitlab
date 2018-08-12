@@ -18,12 +18,16 @@
 - name: add gitlab configuration
   template: src=gitlab.rb.j2 dest=/etc/gitlab/gitlab.rb mode=0600
   notify: reconfigure gitlab
-- name: configure backups
+- name: configure data backups
   cron:
     name: "gitlab data backup"
     job: "/usr/bin/gitlab-rake gitlab:backup:create CRON=1"
     hour: "*/6"
     minute: 1
   notify: restart cron
-
-# https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template
+- name: configure secrets backups
+  cron:
+    name: "gitlab secrets backup"
+    job: "umask 0077; tar -c -C / etc/gitlab | gpg -e -r F12919ACDD05E287 -o {{ gitlab_backup_secrets_path }}/$(date \"+etc-gitlab-%s.tar.gpg\")"
+    hour: "*/6"
+    minute: 1
