@@ -3,6 +3,7 @@
   roles:
     - fail2ban
     - gitlab
+    - ssh-server
   vars_files:
     - ./group_vars/vault
     - ./group_vars/generic

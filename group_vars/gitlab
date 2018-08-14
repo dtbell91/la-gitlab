@@ -25,6 +25,8 @@ gitlab_backup_data_path: "{{ gitlab_backup_root_path }}/gitlab-data"
 gitlab_backup_secrets_path: "{{ gitlab_backup_root_path }}/gitlab-secrets"
 gitlab_backup_secrets_keyid: "{{ vault_gitlab_backup_secrets_keyid }}"
 
+# sshd_config
+gitServer: true
 
 # fail2ban variables
 fail2ban_loglevel: 3
