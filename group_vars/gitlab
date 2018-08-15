@@ -20,10 +20,8 @@ gitlab_smtp_domain: "{{ vault_gitlab_smtp_domain }}"
 gitlab_incoming_email_address: "{{ vault_gitlab_email_address }}"
 gitlab_incoming_email_password: "{{ vault_gitlab_smtp_password }}"
 gitlab_incoming_email_host: "{{ vault_gitlab_smtp_address }}"
-gitlab_backup_root_path: "/srv/backups"
-gitlab_backup_data_path: "{{ gitlab_backup_root_path }}/gitlab-data"
-gitlab_backup_secrets_path: "{{ gitlab_backup_root_path }}/gitlab-secrets"
-gitlab_backup_secrets_keyid: "{{ vault_gitlab_backup_secrets_keyid }}"
+gitlab_backup_data_path: "/srv/backups"
+gitlab_backup_keyids: "{{ vault_gitlab_backup_keyids }}"
 
 # sshd_config
 gitServer: true
