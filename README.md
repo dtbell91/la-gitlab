@@ -4,6 +4,7 @@
 
 1. Disable new account registrations (if you aren't yet ready for public registrations)
 2. Change the root user's email address to something you control/want it to be
+3. Configure networking to use the proxy host as the network gateway (to ensure source IPs are maintained rather than NAT'd)
 
 ## Steps to restore from a backup
 
@@ -18,6 +19,7 @@
 9. Agree to dropping the table (type `yes` when prompted), agree to rebuilding the authorized_keys file (`yes` when prompted).
 10. Restart Gitlab `gitlab-ctl restart`
 11. Check Gitlab is OK `gitlab-rake gitlab:check SANITIZE=true`
-12. Finished.
+12. Check login works OK with MFA/2FA, that repo data and issues are restored, and the push/pull via SSH works.
+13. Finished.
 
 For more information/steps about running a restore see: https://docs.gitlab.com/ee/raketasks/backup_restore.html#restore-for-omnibus-installations
