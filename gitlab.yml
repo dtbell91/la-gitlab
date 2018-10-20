@@ -4,6 +4,7 @@
     - fail2ban
     - gitlab
     - ssh-server
+    - irker
   vars_files:
     - ./group_vars/vault
     - ./group_vars/generic

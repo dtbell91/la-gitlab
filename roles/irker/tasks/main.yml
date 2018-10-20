@@ -1,0 +1,5 @@
+---
+- name: Install Irker
+  apt: name=irker state=installed update_cache=yes cache_valid_time={{cache_valid_time}}
+- name: Enable Irker
+  service: name=irker state=started enabled=yes
